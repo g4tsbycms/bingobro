@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Roboto:400,900|ZCOOL+QingKe+HuangYou&display=swap');
+// Core Sheets
+@import './variables.scss';
+@import './core.scss';
+@import './grid.scss';
+@import './utilities.scss';
+@import './typography.scss';
+@import './colors.scss';
+@import './buttons.scss';
+@import './print.scss';
+// Components
+@import './animations.scss';
+@import './bingoboard.scss';
+@import './cardgeneration.scss';
+@import './gamecontrols.scss';
+// Media Queries
+@import './mediaqueries.scss';
+ 
+
+.ball {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    border-radius: 50%;
+    position: relative;
+    background: radial-gradient(circle at 50% 120%, #81e8f6, #76deef 10%, #055194 80%, #062745 100%);
+  }
+  .ball:before {
+    content: "";
+    position: absolute;
+    top: 1%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    background: radial-gradient(circle at 50% 0px, #ffffff, rgba(255, 255, 255, 0) 58%);
+    //-webkit-filter: blur(5px);
+    z-index: 2;
+  }
+  
+  .ball .shadow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  
+  z-index: -1;
+  }
+   
+  body {
+     
+    margin: 1px auto;
+    //background: linear-gradient(to bottom, rgba(19, 18, 18, 0.2) 0%, rgba(16, 16, 16, 0.5) 140%, #2ad408 100%);
+   
+    background-repeat: no-repeat;
+  }
+   
+  /* Spinning the sphere using key frames */
+  @-ms-keyframes spin {
+    from { -ms-transform: rotate(0deg); }
+    to { -ms-transform: rotate(360deg); }
+  }
+  @-moz-keyframes spin {
+    from { -moz-transform: rotate(0deg); }
+    to { -moz-transform: rotate(360deg); }
+  }
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  @-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+  }
+  
+  /* Move sphere from left to right */
+  @-moz-keyframes moveLeftToRight {
+    0%   { left: -100px; }
+    100% { left: 100%; }
+  }
+  @-ms-keyframes moveLeftToRight {
+    0%   { left: -100px; }
+    100% { left: 100%; }
+  }
+  @keyframes moveLeftToRight {
+    0%   { left: -100px; }
+    100% { left: 100%; }
+  }
+  @-webkit-keyframes moveLeftToRight {
+    0%   { left: -100px; }
+    100% { left: 100%; }
+  }
+  
+  
+  @keyframes screen {
+    from {
+      opacity: 0;
+    }
+  
+    25%{
+      opacity: 0.3;
+      transform: scale3d(3, 3, 4);
+    }
+  
+    50%{
+      opacity: 0.75;
+    }
+  
+    75%{
+      opacity: 1;
+  
+    }
+  
+    to{
+      opacity: 0;
+    }
+  }
